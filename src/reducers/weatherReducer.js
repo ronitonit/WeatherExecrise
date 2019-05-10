@@ -1,21 +1,24 @@
-import {DATA_LOADED, WEATHER_DATA} from '../actions/types';
+import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE} from '../actions/types';
   
   const initialState = {
-   dataLoaded: false,
-   weatherData: null
+      weatherDataLoaded: false,
+      weatherData: null,
+      error:null
   }
 
   export default function (state = initialState, action) {
     switch (action.type) {
-    case  DATA_LOADED:
-      return {
+      case WEATHER_DATA_NOT_POSSIBLE:
+      return{
         ...state,
-        dataLoaded: action.payload
+        error: action.payload.message
       }
     case  WEATHER_DATA: {
       return {
         ...state,
+        weatherDataLoaded : true,
         weatherData : action.payload
+
       }
     }
     
