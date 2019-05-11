@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-// import logo from '../logo.svg';
 import logo from '../circles.svg';
 import {connect} from 'react-redux';
 import {getUserInitialWeatherData} from '../actions/weatherActions';
+import WeatherDashbobard from './WeatherDashboard';
 
-class WeatherPage extends Component {
+class mainContainer extends Component {
 
     componentDidMount(){
         this.props.getUserInitialWeatherData();
@@ -27,7 +27,7 @@ class WeatherPage extends Component {
           }
            
            {this.props.dataLoaded &&
-            <p>i m weather app</p>
+            <WeatherDashbobard/>
           }
           </header>
       </div>
@@ -36,10 +36,8 @@ class WeatherPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    allData: state.allData,
     dataLoaded : state.allData.weatherDataLoaded,
-    weatherData: state.allData.weatherData,
     error: state.allData.error
   });
 
-export default connect (mapStateToProps, {getUserInitialWeatherData})(WeatherPage);
+export default connect (mapStateToProps, {getUserInitialWeatherData})(mainContainer);

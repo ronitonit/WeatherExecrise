@@ -1,9 +1,10 @@
-import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE} from '../actions/types';
+import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE} from '../actions/types';
   
   const initialState = {
       weatherDataLoaded: false,
       weatherData: null,
-      error:null
+      error:null,
+      tempUnit:'Celcius'
   }
 
   export default function (state = initialState, action) {
@@ -18,8 +19,13 @@ import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE} from '../actions/types';
         ...state,
         weatherDataLoaded : true,
         weatherData : action.payload
-
       }
+    }
+    case TEMP_UNIT_CHANGE:{
+        return{
+            ...state,
+            tempUnit : action.payload
+        }
     }
     
     default:
