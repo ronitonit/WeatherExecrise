@@ -24,8 +24,12 @@
 }
 
 .mainContainer{
-  /* color: #fff; */
   margin: 15px;
+  width: 80%;
+}
+
+.hidden{
+  display: none;
 }
 
 @keyframes App-logo-spin {
