@@ -29,10 +29,12 @@ const styles = theme => ({
     return (
         <Grid item xs={12} sm={4} className={(currKey === currInitialCard || ( currKey > currInitialCard && currKey <= currInitialCard+2) ) ? 'shown' : 'hidden'}>
         <Paper className={classes.paper}>
-        <p><small>{this.props.data.dt_txt}</small></p>
-        <br/>
         <span>Temp : </span> 
         <span>{this.props.tempUnit === 'Celcius' ? Math.trunc(this.props.data.main.temp - 273.15)  :  Math.trunc(this.props.data.main.temp * 9/5 - 459.67) } </span>
+        <br/>
+        <p><small>{this.props.data.dt_txt}</small></p>
+       
+        
         </Paper>
         </Grid>
     );}

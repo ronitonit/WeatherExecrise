@@ -16,6 +16,9 @@ const styles = theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  TempUnits :{
+    width : '100%'
+  }
 });
 
 class WeatherDashbobard extends Component {
@@ -24,19 +27,19 @@ class WeatherDashbobard extends Component {
     const { classes } = this.props;
     return (
       <div className="mainContainer">
-    <div className={classes.root}>
-      <Grid container spacing={24}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}><CityInformation data ={this.props.city}></CityInformation></Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}><TempUnits></TempUnits></Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}><Slider data ={this.props.weatherList}></Slider></Paper>
-        </Grid>
-      </Grid>
-    </div>
+        <div className={classes.root}>
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <CityInformation city ={this.props.city} weather={this.props.weather}></CityInformation>
+                <Paper className={classes.paper}><TempUnits></TempUnits></Paper>
+              </Paper>
+              </Grid>
+              <Grid item xs={12}>
+              <Paper className={classes.paper}><Slider data ={this.props.weatherList}></Slider></Paper>
+            </Grid>
+          </Grid>
+        </div>
       </div>
     );
   }
@@ -44,6 +47,7 @@ class WeatherDashbobard extends Component {
 
 const mapStateToProps = state => ({
     city: state.allData.weatherData.city,
+    weather: state.allData.weatherData.list[0].weather[0],
     weatherList: state.allData.weatherData.list,
   });
 
