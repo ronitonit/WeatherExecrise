@@ -36,7 +36,7 @@ class WeatherDashbobard extends Component {
               </Paper>
               </Grid>
               <Grid item xs={12}>
-              <Paper className={classes.paper}><Slider data ={this.props.weatherList}></Slider></Paper>
+              <Paper className={classes.paper}><Slider></Slider></Paper>
             </Grid>
           </Grid>
         </div>
