@@ -1,0 +1,18 @@
+
+.RadioButtonsDiv{ 
+    display: inline-block;
+    float: right;
+    margin-top: 5vh;
+  }
+  
+  .RadioButtonsDiv > div{
+    margin: 0;
+  }
+  
+  .RadioButtonsDiv .MuiFormControlLabel-root-134 {
+  margin: 0!important;
+  }
+  
+  .RadioButtonsDiv .MuiFormControlLabel-root-134 span{
+    padding: 2px 5px;
+  }

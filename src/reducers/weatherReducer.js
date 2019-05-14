@@ -1,10 +1,12 @@
-import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE} from '../actions/types';
+import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE, CHANGE_SELECTED_CARD} from '../actions/types';
   
   const initialState = {
       weatherDataLoaded: false,
       weatherData: null,
       error:null,
-      tempUnit:'Celcius'
+      tempUnit:'Celcius',
+      cardSelected: 0,
+      cardSelectedDate: null
   }
 
   export default function (state = initialState, action) {
@@ -25,6 +27,13 @@ import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE} from '../acti
         return{
             ...state,
             tempUnit : action.payload
+        }
+    }
+    case CHANGE_SELECTED_CARD:{
+        return{
+            ...state,
+            cardSelected : action.payload[0],
+            cardSelectedDate: action.payload[1]
         }
     }
     

@@ -1,0 +1,31 @@
+.barchart{
+width: 100%;
+}
+.singleBar{
+    width: 7%;
+    height: 30vh;
+    margin: 0 1%;
+    background: #e8e4e4;
+    display: inline-block;
+    position: relative;
+}
+.filler{
+    background: #525852;
+    vertical-align: sub;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+}
+
+.singleBar span {
+    font-size: 13px;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    color: #fff;
+}
+
+.barDegree{
+    font-size: 15px;
+}

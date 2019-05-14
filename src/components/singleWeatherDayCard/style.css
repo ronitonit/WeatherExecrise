@@ -1,0 +1,19 @@
+.CardShown{
+    transition: opacity 2s linear;
+  }
+  .CardShown:hover div{
+    transition: .3s;
+    cursor: pointer;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  }
+  .CardShown h2{
+  margin: 0;
+  display: inline-block;
+  }
+  
+  .CardHidden{
+    display: none;
+    transition: opacity 2s linear;
+  }

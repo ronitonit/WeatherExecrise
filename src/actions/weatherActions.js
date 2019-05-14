@@ -1,4 +1,4 @@
-import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE
+import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE, CHANGE_SELECTED_CARD
   } from './types';
 
   export function getUserInitialWeatherData() {
@@ -28,3 +28,12 @@ import {WEATHER_DATA, WEATHER_DATA_NOT_POSSIBLE, TEMP_UNIT_CHANGE
           })
       }
   }
+
+  export function changecardSelected(key, date){
+    return function(dispatch){
+      dispatch({
+          type: CHANGE_SELECTED_CARD,
+          payload: [key, date]
+        })
+    }
+}

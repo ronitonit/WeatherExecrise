@@ -7,7 +7,8 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import {changeTempUnitOnChange} from '../actions/weatherActions';
+import {changeTempUnitOnChange} from '../../actions/weatherActions';
+import '../TempUnits/style.css'
 
 const styles = theme => ({
     root: {
@@ -40,7 +41,7 @@ class TempUnits extends Component {
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.root}>
+            <div className="RadioButtonsDiv">
                 <RadioGroup
             aria-label="unit"
             name="unit1"

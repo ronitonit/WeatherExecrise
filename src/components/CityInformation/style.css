@@ -1,0 +1,27 @@
+
+.cityInfo {
+    display: inline-grid;
+    float: left;
+    padding: 0 15px;
+    position:relative;
+    border-right: 1px solid #cccccc7a;
+  }
+  
+  .cityInfo img {
+    position: absolute;
+    top: -5px;
+    right: 10px;
+  }
+  
+  .cityInfo h1 {
+    margin-bottom: 0;
+  }
+  
+  .cityInfo small {
+    font-style: italic;
+    color: lightslategray;
+  }
+  
+  .classesForCityInfo {
+    display: inline-block;
+  }

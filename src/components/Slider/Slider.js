@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import { SkipPrevious, SkipNext } from '@material-ui/icons';
-import SingleWeatherDayCard from '../components/singleWeatherDayCard';
+import SingleWeatherDayCard from '../singleWeatherDayCard/singleWeatherDayCard';
+import '../Slider/style.css';
 
 const styles = theme => ({
     root: {
@@ -25,7 +26,6 @@ class Slider extends Component {
     constructor(props){
         super(props);
         this.state = {initialCard :0,
-            buttonDisabled: false
         }
     }
 
@@ -70,18 +70,15 @@ class Slider extends Component {
     });
     tempVal = [firstDay, tempVal[0]/counter,tempVal[1]/counter,tempVal[2]/counter,tempVal[3]/counter,tempVal[4]/counter];
     DayDetails.push(tempVal);
-    debugger;
     console.log(DayDetails.length)
 
         return (
             <Grid container className={classes.root} spacing={16}>
             <Grid item xs={1} sm={1}>
             {this.state.initialCard !== 0 && 
-            <button  onClick={() => this.nextPrevBTNclicked("prev")}>
-             <IconButton aria-label="prev">
+             <IconButton aria-label="prev" onClick={() => this.nextPrevBTNclicked("prev")} className="iconButton">
              <SkipPrevious/>
            </IconButton> 
-           </button>
 
             }
             </Grid>
@@ -89,17 +86,15 @@ class Slider extends Component {
             <Grid item xs={10} sm={10}>
             <Grid container className={classes.root} spacing={16}>
             {DayDetails.map((item, index) => (
-                <SingleWeatherDayCard data={item} place={index} currInitialCard={this.state.initialCard}/>
+                <SingleWeatherDayCard data={item} place={index} currInitialCard={this.state.initialCard} key={item[0]}/>
       ))}
       </Grid>
             </Grid>
              <Grid item xs={1} sm={1}>
              {(this.state.initialCard +3)  < DayDetails.length && 
-             <button  onClick={() => this.nextPrevBTNclicked("next")}>
-              <IconButton aria-label="Next">
+              <IconButton aria-label="Next" onClick={() => this.nextPrevBTNclicked("next")} className="iconButton">
               <SkipNext /> 
                </IconButton>
-               </button>
       }
              </Grid>
              </Grid>
