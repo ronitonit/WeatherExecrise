@@ -27,6 +27,16 @@ The app consists of three main parts
 - The bar also shows temp for that time period and weather icon
 
 
+## Possible upgrades 
+- Automatic location tracker
+- Responsive implementation
+- unit testing.
+- show more days (need paid account)
+- show day name with date
+- add line chart for wind/cloud on top of barchart
+
+---------------------------------------------------
+
 USE BELOW COMMANDS TO RUN THE APP IN LOCAL SYSTEM
 
 ## Available Scripts
