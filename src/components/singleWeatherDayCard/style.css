@@ -1,7 +1,7 @@
 .CardShown{
     transition: opacity 2s linear;
   }
-  .CardShown:hover div{
+  .CardShown:hover > div{
     transition: .3s;
     cursor: pointer;
     box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
@@ -11,9 +11,46 @@
   .CardShown h2{
   margin: 0;
   display: inline-block;
+  font-size: 1.8em;
   }
   
   .CardHidden{
     display: none;
     transition: opacity 2s linear;
   }
+
+  .activeCard > div{
+    /* background:#f50057; */
+    background:#ff0000;
+    color:#fff;
+  }
+
+  .mainInfo {
+    width: 50%;
+    display: inline-block;
+}
+
+.mainInfo p{
+  margin-top:0; 
+}
+
+.additionalInfo {
+  width: 50%;
+  display: inline-block;
+}
+
+.additionalInfo ul {
+  list-style: none;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+.additionalInfo ul li{
+  opacity: 0.8;
+  border-bottom: 1px solid #ffffff61;
+  padding: 10px 0;
+  font-size: calc(7px + 1vmin);
+  text-align: right;
+}

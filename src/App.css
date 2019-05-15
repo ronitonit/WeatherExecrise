@@ -29,7 +29,11 @@
 
 .degreeSymbol{
   vertical-align: top;
-  margin-left: -3px;
+  margin-left: 2px;
+}
+
+.classesForCityInfo{
+  padding:0;
 }
 
 @keyframes App-logo-spin {

@@ -8,6 +8,12 @@ import { SkipPrevious, SkipNext } from '@material-ui/icons';
 import SingleWeatherDayCard from '../singleWeatherDayCard/singleWeatherDayCard';
 import '../Slider/style.css';
 
+const mapStateToProps = state => ({
+  city: state.allData.weatherData.city,
+  weather: state.allData.weatherData.list[0].weather[0],
+  weatherList: state.allData.weatherData.list,
+});
+
 const styles = theme => ({
     root: {
       flexGrow: 1,
@@ -74,7 +80,7 @@ class Slider extends Component {
 
         return (
             <Grid container className={classes.root} spacing={16}>
-            <Grid item xs={1} sm={1}>
+            <Grid item xs={1} sm={1} className="iconButtonWrapper">
             {this.state.initialCard !== 0 && 
              <IconButton aria-label="prev" onClick={() => this.nextPrevBTNclicked("prev")} className="iconButton">
              <SkipPrevious/>
@@ -101,13 +107,6 @@ class Slider extends Component {
         );
     }
 }
-
-const mapStateToProps = state => ({
-    city: state.allData.weatherData.city,
-    weather: state.allData.weatherData.list[0].weather[0],
-    weatherList: state.allData.weatherData.list,
-  });
-
 
 Slider.propTypes = {
     classes: PropTypes.object.isRequired,

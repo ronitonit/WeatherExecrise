@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../BarchartPerDay/style.css';
+import {filterFromArray, getSelectedDate, getMaxAndMinfromArray} from '../../utils/helperFunctions';
 
 const mapStateToProps = state => ({
     cardSelected: state.allData.cardSelected,
@@ -14,31 +15,16 @@ class BarchartPerDay extends Component {
 
     render() {
         // get state for date 
-        let DateSelected;
-        if( this.props.cardSelectedDate === null){
-            debugger;   
-            let dateTimeCombined = this.props.weatherList[0].dt_txt;
-            DateSelected = dateTimeCombined.substr(0,dateTimeCombined.indexOf(' '));
-        }
-        else{
-            DateSelected = this.props.cardSelectedDate;
-        }
 
-        let infoForSelectedDate = this.props.weatherList.filter((item, index) => {
-            let dateAndTime = item.dt_txt;
-            let dateOnly = dateAndTime.substr(0,dateAndTime.indexOf(' '));
-        
-                //if the date in each loop matches then add all the temps and cloud etc.
-                if(DateSelected === dateOnly){
-                  return true;
+        let DateSelected = getSelectedDate(this.props.cardSelectedDate, this.props.weatherList);
 
-                }
-                else{
-                 
-                }
-            });
-debugger;
-            console.log(infoForSelectedDate)
+        let infoForSelectedDate = filterFromArray(this.props.weatherList, DateSelected);
+        console.log(infoForSelectedDate);
+
+            //get higest temperature for that day so we can make our graph better
+            let maxVal =  getMaxAndMinfromArray(infoForSelectedDate);
+            debugger;
+            maxVal = maxVal[0] - 273.15
 
         // on all weather list, if the entry matches the date then show it as a bar
 
@@ -46,10 +32,11 @@ debugger;
             <div className="barchart">
             {infoForSelectedDate.map((item, index) => (
                  <div className="singleBar">
-                 {/* <p>{item.main.temp}</p> */}
+                 <div className="filler" style={{height : (((item.main.temp - 273.15) /maxVal)*100)+'%'}}>
                  <p className="barDegree">{this.props.tempUnit === 'Celcius' ? Math.trunc(item.main.temp - 273.15)  :  Math.trunc(item.main.temp * 9/5 - 459.67) } <small className="degreeSymbol">o </small> </p>
-                 <div className="filler" style={{height : ((item.main.temp/373.15)*100)+'%'}}></div>
-                 <span>{(item.dt_txt).substr((item.dt_txt).indexOf(' ')+1)}</span>
+                 </div>
+                 <span>{((item.dt_txt).substr((item.dt_txt).indexOf(' ')+1)).slice(0, -3)}</span>
+                 <img src = {"http://openweathermap.org/img/w/"+ item.weather[0].icon+".png"} alt="weather description icon"/>
                
              </div>
       ))}
@@ -60,6 +47,4 @@ debugger;
     }
 }
 
-export default connect(
-    mapStateToProps,
-)(BarchartPerDay);
+export default connect(mapStateToProps,)(BarchartPerDay);

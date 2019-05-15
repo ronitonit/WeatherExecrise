@@ -2,30 +2,45 @@
 width: 100%;
 }
 .singleBar{
-    width: 7%;
-    height: 30vh;
-    margin: 0 1%;
-    background: #e8e4e4;
+    width: 3%;
+    height: 35vh;
+    margin: 0 2%;
+    /* background: #e8e4e4; */
     display: inline-block;
     position: relative;
 }
 .filler{
-    background: #525852;
+    background: rgba(0, 0, 0, 0.54);
     vertical-align: sub;
     position: absolute;
     width: 100%;
     bottom: 0;
+    border-radius: 50px;
+    transition: .3s;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+    -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
 
 }
 
 .singleBar span {
     font-size: 13px;
     position: absolute;
-    left: 5px;
-    bottom: 5px;
-    color: #fff;
+    left: 0;
+    bottom: -25px;
+    color: #000;
+}
+
+.singleBar img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .barDegree{
     font-size: 15px;
+    position: absolute;
+    top: -36px;
+    left: 0;
+    right: 0;
 }

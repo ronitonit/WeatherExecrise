@@ -20,8 +20,16 @@
   .cityInfo small {
     font-style: italic;
     color: lightslategray;
+    font-size: 2vh
   }
   
   .classesForCityInfo {
     display: inline-block;
+    padding:0!important;
+    box-shadow: none!important;
+    background: 
+  }
+
+  .MuiRadio-colorSecondary-144.MuiRadio-checked-141{
+    color:#ff0000!important
   }

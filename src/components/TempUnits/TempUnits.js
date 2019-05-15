@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import {changeTempUnitOnChange} from '../../actions/weatherActions';
 import '../TempUnits/style.css'
