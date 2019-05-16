@@ -17,6 +17,7 @@ The app consists of three main parts
 
 - Each card in the slider is a day.
 - The card shows, Average temperature for the whole day, the date and other relevant information
+- if the card is for today then show day name with date
 - User can Click on the card to load the details view in the bar chart section
 
 ## BarChart section
@@ -37,7 +38,6 @@ The app consists of three main parts
 - Responsive implementation
 - unit testing.
 - show more days (need paid account)
-- show day name with date
 - add line chart for wind/cloud on top of barchart
 
 ---
