@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../circles.svg';
+import logo from '../assets/circles.svg';
 import {connect} from 'react-redux';
 import {getUserInitialWeatherData} from '../actions/weatherActions';
 import WeatherDashbobard from './WeatherDashboard';
