@@ -113,3 +113,28 @@ export function getAverageForDiffValuesForDay(weatherList) {
 
   return DayDetails;
 }
+
+export function getTodaysDate() {
+  let date = new Date();
+  let year = date.getFullYear();
+  let month = date.getMonth();
+  month = month + 1;
+  if (month.toString().length < 2) {
+    month = "0" + month;
+  }
+  let day = date.getDate();
+  let dayInWeek = date.getDay();
+  let dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let todayDayName = dayNames[dayInWeek];
+  let fullDate = year + "-" + month + "-" + day;
+
+  return [fullDate, todayDayName];
+}

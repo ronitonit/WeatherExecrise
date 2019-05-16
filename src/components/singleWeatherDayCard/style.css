@@ -1,39 +1,51 @@
-.CardShown{
-    transition: opacity 2s linear;
-  }
-  .CardShown:hover > div{
-    transition: .3s;
-    cursor: pointer;
-    box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
-    -webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
-    -moz-box-shadow:rgba(0, 0, 0, 0.3) 0 16px 16px 0;
-  }
-  .CardShown h2{
+.CardShown {
+  transition: opacity 2s linear;
+}
+
+.CardShown:hover>div {
+  transition: .3s;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 16px 16px 0;
+}
+
+.CardShown h2 {
   margin: 0;
   display: inline-block;
   font-size: 1.8em;
-  }
-  
-  .CardHidden{
-    display: none;
-    transition: opacity 2s linear;
-    transition: .3s;
-  }
-
-  .activeCard > div{
-    /* background:#f50057; */
-    background:#ff0000;
-    color:#fff;
-    transition: .3s;
-  }
-
-  .mainInfo {
-    width: 50%;
-    display: inline-block;
 }
 
-.mainInfo p{
+.CardHidden {
+  display: none;
+  transition: opacity 2s linear;
+  transition: .3s;
+}
+
+.activeCard>div {
+  /* background:#f50057; */
+  background: #ff0000;
+  color: #fff;
+  transition: .3s;
+}
+
+.mainInfo {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.mainInfo p {
   margin: 0;
+}
+
+.mainInfo .dayName {
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  font-size: 14px;
+  font-style: italic;
 }
 
 .additionalInfo {
@@ -49,7 +61,7 @@
   padding-inline-start: 0;
 }
 
-.additionalInfo ul li{
+.additionalInfo ul li {
   opacity: 0.8;
   border-bottom: 1px solid #ffffff61;
   padding: 10px 0;

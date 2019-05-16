@@ -8,7 +8,8 @@ import "../singleWeatherDayCard/style.css";
 import {
   getDegreeBasedonPreference,
   filterFromArray,
-  getMaxAndMinfromArray
+  getMaxAndMinfromArray,
+  getTodaysDate
 } from "../../utils/helperFunctions";
 
 const mapStateToProps = state => ({
@@ -47,6 +48,7 @@ class SingleWeatherDayCard extends Component {
       this.props.data[0]
     );
     let MaxMinVal = getMaxAndMinfromArray(infoForSelectedDate);
+    let todayDateAndDayName = getTodaysDate();
     return (
       <Grid
         item
@@ -81,6 +83,9 @@ class SingleWeatherDayCard extends Component {
               <p>
                 <small>{this.props.data[0]}</small>
               </p>
+              {this.props.data[0] === todayDateAndDayName[0] && (
+                <small className="dayName">{todayDateAndDayName[1]}</small>
+              )}
             </div>
             <div className="additionalInfo">
               <ul>
