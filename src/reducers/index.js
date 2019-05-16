@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import weatherReducer from './weatherReducer';
+import { combineReducers } from "redux";
+import weatherReducer from "./weatherReducer";
 
 export default combineReducers({
   allData: weatherReducer

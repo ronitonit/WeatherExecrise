@@ -1,10 +1,6 @@
-
-
 The Weather App is for professionals to know the current weather outside.
 
-
 ![](weatherAppDemo.gif)
-
 
 The Web app is made with React.js. Redux is used for state Management.
 https://openweathermap.org/ is utilized to get weather data.
@@ -13,21 +9,30 @@ The app shows detailed weather for 5 days. ( free version )
 The app consists of three main parts
 
 ## City Information section
+
 - Name of the city and the description of current weather is shown
 - User can change the temperature between Celsius and Fahrenheit
 
 ## Slider showing Daily forecast
-- Each card in the slider is a day. 
+
+- Each card in the slider is a day.
 - The card shows, Average temperature for the whole day, the date and other relevant information
 - User can Click on the card to load the details view in the bar chart section
 
 ## BarChart section
+
 - Each bar is a representation of 3 hours.
 - The bar is shown from the current time frame.
 - The bar also shows temp for that time period and weather icon
 
+## - Plugins used
 
-## Possible upgrades 
+- ESLint
+- Prettier - Javascript React
+- Redux devTools
+
+## Possible upgrades
+
 - Automatic location tracker
 - Responsive implementation
 - unit testing.
@@ -35,7 +40,7 @@ The app consists of three main parts
 - show day name with date
 - add line chart for wind/cloud on top of barchart
 
----------------------------------------------------
+---
 
 USE BELOW COMMANDS TO RUN THE APP IN LOCAL SYSTEM
 
@@ -55,6 +60,5 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

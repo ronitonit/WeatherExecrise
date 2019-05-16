@@ -24,25 +24,26 @@
   color: #61dafb;
 }
 
-.mainContainer{
+.mainContainer {
   margin: 15px;
   width: 80%;
 }
 
 
-.degreeSymbol{
+.degreeSymbol {
   vertical-align: top;
   margin-left: 2px;
 }
 
-.classesForCityInfo{
-  padding:0;
+.classesForCityInfo {
+  padding: 0;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

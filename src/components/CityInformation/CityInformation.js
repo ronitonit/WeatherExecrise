@@ -1,15 +1,14 @@
-import React from 'react';
-import '../CityInformation/style.css';
+import React from "react";
+import "../CityInformation/style.css";
 
 const CityInformation = props => {
-
-    let imgUrl = "http://openweathermap.org/img/w/"+props.weather.icon+".png"
-    return (
+  let imgUrl = "http://openweathermap.org/img/w/" + props.weather.icon + ".png";
+  return (
     <div className="cityInfo">
-                <h1>{props.city.name}</h1>
-                <small>{props.weather.description}</small>
-                <img src = {imgUrl}/>
-            </div>
-    );
+      <h1>{props.city.name}</h1>
+      <small>{props.weather.description}</small>
+      <img src={imgUrl} alt="Weather icon" />
+    </div>
+  );
 };
 export default CityInformation;
